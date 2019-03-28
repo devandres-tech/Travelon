@@ -15,6 +15,7 @@ class SideDetails extends Component {
 
   getTime = (coords) => {
     if (this.props.country[0]) {
+      console.log(this.props.country)
       const coords = this.props.country[0].latlng;
       const timeZ = tz(coords[0], coords[1]);
       const options = {
@@ -24,7 +25,7 @@ class SideDetails extends Component {
       },
         formatter = new Intl.DateTimeFormat([], options)
       const time = formatter.format(new Date());
-      return time.slice(11, 21);
+      return time.slice(11, 22);
     }
   }
 
@@ -37,7 +38,9 @@ class SideDetails extends Component {
     }
 
     return (
-      <p>current time: {time}</p>
+      <div className="details">
+        <p>current time: {time}</p>
+      </div>
     )
   }
 }
@@ -51,32 +54,3 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(SideDetails);
-
-
-// import React from 'react';
-// import { connect } from 'react-redux';
-// import moment from 'moment';
-
-// const SideDetails = (props) => {
-
-//   if (!props.country[0]) {
-//     return <p>Loading...</p>
-//   }
-
-//   const country = props.country[0];
-//   const date = moment.utc(country.timezones[0]);
-
-//   console.log('date', date);
-//   console.log('country', country)
-//   return (
-//     <div className="details">
-//       <p>current time: {country.timezones[0]}</p>
-//     </div>
-//   )
-// }
-
-// function mapStateToProps({ country }) {
-//   return { country }
-// }
-
-// export default connect(mapStateToProps)(SideDetails);
