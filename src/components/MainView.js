@@ -6,6 +6,7 @@ import { getWeather } from '../actions/index';
 import Weather from './Weather';
 import Images from './Images';
 import Airports from './Airports';
+import Places from './Places';
 
 
 class MainView extends Component {
@@ -24,8 +25,8 @@ class MainView extends Component {
     switch (param) {
       case 'weather':
         return <Weather />
-      case 'currency':
-        return <h1>this is currency!</h1>;
+      case 'places':
+        return <Places />
       case 'airports':
         return <Airports />;
       case 'images':
@@ -42,7 +43,7 @@ class MainView extends Component {
           <div>
             <ul>
               <li onClick={() => this.toggleView('weather')}>Weather</li>
-              <li onClick={() => this.toggleView('currency')}>Currency</li>
+              <li onClick={() => this.toggleView('places')}>Discover Places</li>
               <li onClick={() => this.toggleView('airports')}>Find Airports</li>
               <li onClick={() => this.toggleView('images')}>Images</li>
             </ul>
