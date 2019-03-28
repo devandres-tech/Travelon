@@ -47,6 +47,7 @@ class LandingPage extends Component {
       <div className='background'>
 
 
+
       <form className="container" onSubmit={this.onFormSubmit}>
       <div className='title'>
       Travelon<br/>
@@ -59,9 +60,9 @@ class LandingPage extends Component {
           type="text"
         />
 
-        <div class="search" />
+          <div class="search" />
 
-      </form>
+        </form>
       </div>
     )
   }
