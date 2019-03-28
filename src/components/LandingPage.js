@@ -50,7 +50,7 @@ class LandingPage extends Component {
       <form className="container" onSubmit={this.onFormSubmit}>
       <div className='title'>
       Travelon<br/>
-      <h5>What Country You Like To Visit?</h5>
+      <h5>What Country Would You Like To Visit?</h5>
       </div>
         <input
           value={this.state.term}
