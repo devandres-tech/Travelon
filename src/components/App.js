@@ -6,6 +6,7 @@ import MainView from './MainView';
 import TopPlaces from './TopPlaces';
 import Currency from './Currency';
 import Flights from './Flights';
+import Weather from './Weather';
 
 class App extends Component {
   render() {
@@ -20,6 +21,7 @@ class App extends Component {
           <Route exact path="/main-view/top-places" component={TopPlaces} />
           <Route exact path="/main-view/currency" component={Currency} />
           <Route exact path="/main-view/flight-info" component={Flights} />
+          <Route exact path="/main-view/weather" component={Weather} />
         </Switch>
       </BrowserRouter>
     );

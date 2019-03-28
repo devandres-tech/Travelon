@@ -1,10 +1,13 @@
 import axios from 'axios';
 
 const COUNTRY_ROOT_URL = 'https://restcountries.eu/rest/v2/name';
-const FETCH_CITY_ROOT_URL = 'http://api.geonames.org/timezoneJSON?';
-// lat = 23 & lng=-102 & username=travelon
+const WEATHER_ROOT_UTL = 'https://api.openweathermap.org/data/2.5/forecast?'
+const WEATHER_KEY = '60271f8873cd6fca6c2b2ce6c281a2c6';
+// https://api.openweathermap.org/data/2.5/forecast?lat=35&lon=139&units=imperial&appid=60271f8873cd6fca6c2b2ce6c281a2c6
+
 export const GET_COUNTRY = 'GET_COUNTRY';
 export const FETCH_TIME = 'FETCH_TIME';
+export const GET_WEATHER = 'GET_WEATHER';
 
 export function getCountry(country) {
   const url = `${COUNTRY_ROOT_URL}/${country}`;
@@ -16,13 +19,11 @@ export function getCountry(country) {
   }
 }
 
-export function fetchTime(coords) {
-  console.log('cords', coords);
-  // const url = `${FETCH_CITY_ROOT_URL}lat=${coords[0]}&lng=${coords[1]}&username=travelon`;
-  // const request = axios.get(url);
-
+export function getWeather(city) {
+  const url = `${WEATHER_ROOT_UTL}&q=${city}&units=imperial&appid=${WEATHER_KEY}`;
+  const request = axios.get(url);
   return {
-    type: FETCH_TIME,
-    payload: { hei: 'hel' }
+    type: GET_WEATHER,
+    payload: request
   }
 }

@@ -1,9 +1,9 @@
-import { GET_COUNTRY } from '../actions';
+import { GET_WEATHER } from '../actions/index';
 
 export default function (state = [], action) {
   switch (action.type) {
-    case GET_COUNTRY:
-      return [action.payload.data[0], ...state];
+    case GET_WEATHER:
+      return [action.payload.data, ...state];
     default: state = [];
   }
 
