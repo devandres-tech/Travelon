@@ -6,15 +6,15 @@ import promise from "redux-promise";
 import App from './components/App';
 import { createStore, applyMiddleware } from "redux";
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
-import reducers from './components/reducers';
+import reducers from './reducers';
 import '../src/styles/main.scss';
 
 
-// const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
+const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
 
 ReactDOM.render(
-  // <Provider store={createStoreWithMiddleware(reducers)}>
-  <App />,
-  // </Provider>,
+  <Provider store={createStoreWithMiddleware(reducers)}>
+    <App />
+  </Provider>,
   document.getElementById('root')
 );
