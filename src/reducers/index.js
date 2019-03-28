@@ -2,7 +2,7 @@ import { combineReducers } from "redux";
 import searchReducer from "./searchReducer";
 
 const rootReducer = combineReducers({
-  getCountry: searchReducer
+  country: searchReducer
 });
 
 export default rootReducer;
