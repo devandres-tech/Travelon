@@ -34,10 +34,6 @@ const mapStateToProps = ({ weather, country }) => {
   return { weather, country }
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators({ getWeather }, dispatch)
-}
 
-
-export default connect(mapStateToProps, mapDispatchToProps)(Weather);
+export default connect(mapStateToProps)(Weather);
 

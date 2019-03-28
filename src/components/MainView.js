@@ -4,6 +4,8 @@ import { bindActionCreators } from 'redux';
 import { getWeather } from '../actions/index';
 
 import Weather from './Weather';
+import Images from './Images';
+import Airports from './Airports';
 
 
 class MainView extends Component {
@@ -24,10 +26,10 @@ class MainView extends Component {
         return <Weather />
       case 'currency':
         return <h1>this is currency!</h1>;
-      case 'places':
-        return <h1>this is places!</h1>;
+      case 'airports':
+        return <Airports />;
       case 'images':
-        return <h1>this is images!</h1>;
+        return <Images />
       default:
         return <h1 className="main-view">hello</h1>
     }
@@ -41,7 +43,7 @@ class MainView extends Component {
             <ul>
               <li onClick={() => this.toggleView('weather')}>Weather</li>
               <li onClick={() => this.toggleView('currency')}>Currency</li>
-              <li onClick={() => this.toggleView('places')}>Popular Places</li>
+              <li onClick={() => this.toggleView('airports')}>Find Airports</li>
               <li onClick={() => this.toggleView('images')}>Images</li>
             </ul>
           </div>
