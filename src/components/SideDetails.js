@@ -27,7 +27,7 @@ class SideDetails extends Component {
 
     return (
       <div className="details">
-        <p>current time: {time}</p>
+        <h4 className="time">current time: <strong>{time}</strong></h4>
       </div>
     )
   }

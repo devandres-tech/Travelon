@@ -38,14 +38,12 @@ class MainView extends Component {
     return (
       <>
         <div className="side-panel">
-          <div>
-            <ul>
-              <li onClick={() => this.toggleView('weather')}>Weather</li>
-              <li onClick={() => this.toggleView('places')}>Discover Places</li>
-              <li onClick={() => this.toggleView('airports')}>Find Airports</li>
-              <li onClick={() => this.toggleView('images')}>Images</li>
-            </ul>
-          </div>
+          <ul className="side-panel__list">
+            <li onClick={() => this.toggleView('weather')}><i class="fas fa-sun"></i>Weather</li>
+            <li onClick={() => this.toggleView('places')}><i class="fas fa-map-marked-alt"></i>Discover Places</li>
+            <li onClick={() => this.toggleView('airports')}><i class="fas fa-plane-departure"></i>Find Airports</li>
+            <li onClick={() => this.toggleView('images')}><i class="fas fa-camera"></i>Images</li>
+          </ul>
         </div>
         {
           this.renderSwitch(this.state.view)
