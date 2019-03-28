@@ -1,10 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 import axios from 'axios';
-
-import { getWeather } from '../actions/index';
-
 
 class Weather extends Component {
 
@@ -27,7 +23,6 @@ class Weather extends Component {
     )
   }
 }
-
 
 
 const mapStateToProps = ({ weather, country }) => {

@@ -1,15 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 import tz from 'tz-lookup';
-
-import { getCountry } from '../actions/index';
-
-// import { fetchTime } from '../actions/index';
 
 class SideDetails extends Component {
 
-  getTime = (coords) => {
+  getTime = () => {
     if (this.props.country[0]) {
       const coords = this.props.country[0].latlng;
       const timeZ = tz(coords[0], coords[1]);
