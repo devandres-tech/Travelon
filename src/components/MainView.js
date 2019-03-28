@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import { getWeather } from '../actions/index';
 
 import Weather from './Weather';
 import Images from './Images';

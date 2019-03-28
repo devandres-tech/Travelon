@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import LandingPage from './LandingPage';
 import MainView from './MainView';
@@ -15,10 +15,6 @@ class App extends Component {
             exact
             path="/main-view"
             component={MainView} />
-          {/* <Route exact path="/main-view/top-places" component={TopPlaces} />
-          <Route exact path="/main-view/currency" component={Currency} />
-          <Route exact path="/main-view/flight-info" component={Flights} />
-          <Route exact path="/main-view/weather" component={Weather} /> */}
         </Switch>
       </BrowserRouter>
     );

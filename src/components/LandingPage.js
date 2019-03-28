@@ -27,7 +27,6 @@ class LandingPage extends Component {
     this.props.getCountry(this.state.term);
     console.log(this.props.country)
     this.setState({ view: !this.state.view });
-    // this.props.history.push('/main-view');
   }
 
   renderView = () => {
@@ -45,22 +44,19 @@ class LandingPage extends Component {
   renderForm = () => {
     return (
       <div className='background'>
+        <form className="container" onSubmit={this.onFormSubmit}>
+          <div className='title'>
+            Travelon<br />
+            <h5>What Country Would You Like To Visit?</h5>
+          </div>
+          <input
+            value={this.state.term}
+            onChange={this.onInputChange}
+            placeholder="Enter Country"
+            type="text"
+          />
 
-
-
-      <form className="container" onSubmit={this.onFormSubmit}>
-      <div className='title'>
-      Travelon<br/>
-      <h5>What Country Would You Like To Visit?</h5>
-      </div>
-        <input
-          value={this.state.term}
-          onChange={this.onInputChange}
-          placeholder="Enter Country"
-          type="text"
-        />
-
-          <div class="search" />
+          <div className="search" />
 
         </form>
       </div>
@@ -68,11 +64,6 @@ class LandingPage extends Component {
   }
 
   render() {
-
-    // if (this.props.country.length > 0) {
-    //   console.log(this.props.country[0])
-    //   this.props.getCountry(this.state.term)
-    // }
     return (
       <div>
         {this.state.view ? this.renderView() : this.renderForm()}
