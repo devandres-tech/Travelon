@@ -45,19 +45,20 @@ class LandingPage extends Component {
   renderForm = () => {
     return (
       <div className='background'>
-        <div className='title'>
-          <h2>Travelon</h2><br />
-          What Country You Like To Visit?
-        </div>
 
-        <form className="container" onSubmit={this.onFormSubmit}>
 
-          <input
-            value={this.state.term}
-            onChange={this.onInputChange}
-            placeholder="Enter Country"
-            type="text"
-          />
+
+      <form className="container" onSubmit={this.onFormSubmit}>
+      <div className='title'>
+      Travelon<br/>
+      <h5>What Country Would You Like To Visit?</h5>
+      </div>
+        <input
+          value={this.state.term}
+          onChange={this.onInputChange}
+          placeholder="Enter Country"
+          type="text"
+        />
 
           <div class="search" />
 
