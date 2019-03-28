@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux';
 import { getWeather } from '../actions/index';
 
 import Weather from './Weather';
+import TopPlaces from './TopPlaces';
 
 
 class MainView extends Component {
@@ -25,7 +26,7 @@ class MainView extends Component {
       case 'currency':
         return <h1>this is currency!</h1>;
       case 'places':
-        return <h1>this is places!</h1>;
+        return <TopPlaces />;
       case 'images':
         return <h1>this is images!</h1>;
       default:

@@ -8,6 +8,10 @@ import { getWeather } from '../actions/index';
 
 class Weather extends Component {
 
+  state = {
+    weather: []
+  }
+
   componentWillMount() {
     const WEATHER_ROOT_UTL = 'https://api.openweathermap.org/data/2.5/forecast?'
     const WEATHER_KEY = '60271f8873cd6fca6c2b2ce6c281a2c6';

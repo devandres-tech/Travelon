@@ -18,10 +18,10 @@ class App extends Component {
             exact
             path="/main-view"
             component={MainView} />
-          <Route exact path="/main-view/top-places" component={TopPlaces} />
+          {/* <Route exact path="/main-view/top-places" component={TopPlaces} />
           <Route exact path="/main-view/currency" component={Currency} />
           <Route exact path="/main-view/flight-info" component={Flights} />
-          <Route exact path="/main-view/weather" component={Weather} />
+          <Route exact path="/main-view/weather" component={Weather} /> */}
         </Switch>
       </BrowserRouter>
     );
