@@ -1,14 +1,19 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { getCountry } from '../actions/index';
+import { getCountry, getWeather } from '../actions/index';
+
+import MainView from './MainView';
+import SideDetails from './SideDetails';
+
 
 
 class LandingPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      term: ''
+      term: '',
+      view: false
     };
   }
 
@@ -16,17 +21,28 @@ class LandingPage extends Component {
     this.setState({ term: e.target.value });
   }
 
-
   onFormSubmit = (e) => {
     e.preventDefault();
-
-    // make call to api..
+    this.setState({ term: e.target.value });
     this.props.getCountry(this.state.term);
-    this.setState({ term: e.target.value })
-    this.props.history.push('/main-view');
+    console.log(this.props.country)
+    this.setState({ view: !this.state.view });
+    // this.props.history.push('/main-view');
   }
 
-  render() {
+  renderView = () => {
+    console.log(this.props);
+    console.log(this.state.term);
+    // const capital =
+    return (
+      <div className="wrapper">
+        <MainView />
+        <SideDetails />
+      </div>
+    )
+  }
+
+  renderForm = () => {
     return (
       <form onSubmit={this.onFormSubmit}>
         <input
@@ -38,10 +54,27 @@ class LandingPage extends Component {
       </form>
     )
   }
+
+  render() {
+
+    // if (this.props.country.length > 0) {
+    //   console.log(this.props.country[0])
+    //   this.props.getCountry(this.state.term)
+    // }
+    return (
+      <div>
+        {this.state.view ? this.renderView() : this.renderForm()}
+      </div>
+    )
+  }
+}
+
+const mapStateToProps = ({ country, weather }) => {
+  return { country, weather }
 }
 
 const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators({ getCountry }, dispatch)
+  return bindActionCreators({ getCountry, getWeather }, dispatch)
 }
 
-export default connect(null, mapDispatchToProps)(LandingPage);
+export default connect(mapStateToProps, mapDispatchToProps)(LandingPage);

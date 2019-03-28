@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Redirect } from 'react-router-dom';
+import SideDetails from './SideDetails';
 
 export default class SidePanel extends Component {
 
@@ -11,7 +12,7 @@ export default class SidePanel extends Component {
     return (
       <div className="side-panel">
         <ul>
-          <Link to="/main-view/weather">Weather</Link>
+          <Link to='/main-view/weather'>Weather</Link>
         </ul>
       </div>
     )
