@@ -3,9 +3,7 @@ import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 
 import LandingPage from './LandingPage';
 import MainView from './MainView';
-import Currency from './Currency';
-import Flights from './Flights';
-import Weather from './Weather';
+
 
 class App extends Component {
   render() {
