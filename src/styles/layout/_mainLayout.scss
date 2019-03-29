@@ -49,9 +49,13 @@
   }
 }
 
+
+
+
 .details {
   background-color: #dae0ea;
   font-family: 'Gothic A1', sans-serif;
+
 
   &>.time {
     color: rgb(28, 82, 163);
@@ -62,6 +66,8 @@
     &>strong {
       color: rgb(24, 37, 151);
       font-weight: 700;
+
+
     }
   }
 }
@@ -70,6 +76,7 @@
   font-size: 1.5rem;
   padding-right: .8rem;
 }
+
 
 .img-container {
   width: 400px;
