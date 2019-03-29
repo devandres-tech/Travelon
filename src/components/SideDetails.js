@@ -78,15 +78,21 @@ class SideDetails extends Component {
     const capital = this.getCapital();
     const currency = this.getCurrency();
     const callingCode = this.getCallingCode();
-    const image = 'https://namtech.com.au/wp-content/uploads/2017/09/use-CSS.png'
+
     return (
-      <div className="details">
-        <div className='flag'><img src={flag} height='80' width='80'/> </div>
-        <h5 className="time">{name}'s Current Time: <br/> <strong>{time}</strong></h5>
-        <h5 className='time'>{name}'s Capital: <br/> <strong>{capital}</strong></h5>
-        <h5 className='time'>{name}'s Official Language:<br/> <strong>{language}</strong></h5>
-        <h5 className='time'>{name}'s Currency: <br/> <strong>{currency}</strong></h5>
-        <h5 className='time'>{name}'s Dialing Code: <br/> <strong>+{callingCode}</strong></h5>
+      <div className="right-panel">
+        <ul className="right-panel__list">
+        <h5>
+        <span className='font'>
+          <li  className='flag'> <img src={flag} height='80' width='120'/> </li><br/>
+          <li  className="time">{name}'s Current Time: <br/> <strong>{time}</strong> </li><br/>
+          <li  className='time'>{name}'s Capital: <br/> <strong>{capital}</strong> </li><br/>
+          <li  className='time'>{name}'s Official Language:<br/> <strong>{language}</strong> </li><br/>
+          <li  className='time'>{name}'s Currency: <br/> <strong>{currency}</strong> </li><br/>
+          <li  className='time'>{name}'s Dialing Code: <br/> <strong>+{callingCode}</strong></li>
+          </span>
+          </h5>
+        </ul>
       </div>
     )
   }

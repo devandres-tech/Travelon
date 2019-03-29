@@ -1,19 +1,25 @@
 .wrapper {
   display: grid;
-  grid-template-columns: 250px 1fr 250px;
+  grid-template-columns: 250px 1fr 350px;
   grid-template-rows: 100vh;
+}
+.flag {
+  text-align: center;
 }
 
 .main-view {
-  display: grid;
-  grid-template-columns: 100vh;
-  grid-template-rows: 100vh;
+  text-align: center;
+  font-family: 'Covered By Your Grace', cursive;
+  font-size: 55px;
+  // display: grid;
+  // grid-template-columns: 100vh;
+  // grid-template-rows: 100vh;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: bottom center;
   // globe image
-  background-image: url("https://images.pexels.com/photos/346885/pexels-photo-346885.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940") //bus image
-    // background-image: url("https://i.imgur.com/qaTgrqF.jpg");
+  background-image: url("https://i.imgur.com/hPBnVEQ.jpg")
+
 
     // grid-column: 2/3;
 }
@@ -66,6 +72,31 @@
   }
 }
 
+.right-panel {
+  background-color: #dae0ea;
+
+  // grid-column: 1/2;
+  &>ul {
+    padding-top: 4rem;
+    padding-right: 4rem;
+    list-style-type: none;
+
+    &>li {
+      font-family: 'Gothic A1', sans-serif;
+      transition: all 0.4s ease;
+      padding-bottom: 2.5rem;
+
+
+      font-size: 1.2rem;
+      color: rgb(28, 82, 163);
+      cursor: pointer;
+    }
+
+    &>li:hover {
+      color: rgb(145, 197, 235);
+    }
+  }
+}
 
 
 
@@ -104,6 +135,12 @@
 .img-div {
   padding-right: 2rem;
   padding-bottom: 2rem;
+}
+
+.font {
+  font-family: 'Gothic A1', sans-serif;
+  background-color: rgb(247, 193, 176);
+
 }
 
 .place-container {
