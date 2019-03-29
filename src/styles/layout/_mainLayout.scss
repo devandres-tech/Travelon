@@ -12,12 +12,10 @@
   background-size: cover;
   background-position: bottom center;
   // globe image
-  background-image: url("https://images.pexels.com/photos/346885/pexels-photo-346885.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")
+  background-image: url("https://images.pexels.com/photos/346885/pexels-photo-346885.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940") //bus image
+    // background-image: url("https://i.imgur.com/qaTgrqF.jpg");
 
-  //bus image
-  // background-image: url("https://i.imgur.com/qaTgrqF.jpg");
-
-  // grid-column: 2/3;
+    // grid-column: 2/3;
 }
 
 .weather-container {
@@ -135,4 +133,8 @@
 
 .airport-detail {
   padding-bottom: 2rem;
+}
+
+.fa-home {
+  // padding-top: 2.5rem;
 }
