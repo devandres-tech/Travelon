@@ -30,7 +30,7 @@ class MainView extends Component {
       case 'images':
         return <Images />
       default:
-        return <h1 className="main-view">hello</h1>
+        return <h1 className="main-view"></h1>
     }
   }
 
