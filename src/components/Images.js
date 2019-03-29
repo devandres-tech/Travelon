@@ -1,8 +1,14 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux';
+import ImageDetail from './ImageDetail';
 
 class Images extends Component {
+
+  state = {
+    images: [],
+    imagesView: ''
+  }
 
   componentWillMount() {
     const PHOTO_ROOT_UTL = 'https://pixabay.com/api/?'
@@ -12,23 +18,30 @@ class Images extends Component {
     axios.get(url)
       .then(res => {
         console.log('res', res.data);
-      })
+        for (let i = 1; i < res.data.hits.length; i += 4) {
+          this.state.images.push(res.data.hits[i]);
+        }
+
+        const imgElement = this.state.images.map(function (img) {
+          return <ImageDetail tags={img.tags} img={img.webformatURL} />
+        })
+
+        this.setState({ imagesView: imgElement })
+      });
   }
 
   render() {
     return (
-      <div>
-        <h1>hello imgaes</h1>
+      <div className="images-container">
+        {this.state.imagesView}
       </div>
     )
   }
 }
 
-
 const mapStateToProps = ({ country }) => {
   return { country }
 }
-
 
 export default connect(mapStateToProps)(Images);
 

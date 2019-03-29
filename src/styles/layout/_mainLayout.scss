@@ -9,6 +9,23 @@
   // grid-column: 2/3;
 }
 
+.weather-container {
+  padding-bottom: 2rem;
+}
+
+.images-container {
+  background-color: rgb(247, 193, 176);
+}
+
+.main-weather {
+  padding-top: 5rem;
+  background-color: rgb(247, 193, 176);
+  // grid-column: 2/3;
+  font-family: 'Gothic A1', sans-serif;
+  text-align: center;
+  // padding-left: ;
+}
+
 .side-panel {
   background-color: #dae0ea;
 
@@ -58,4 +75,14 @@
 .fas {
   font-size: 1.5rem;
   padding-right: .8rem;
+}
+
+
+.img-container {
+  width: 400px;
+  height: 250px;
+}
+
+.img-div {
+  padding-bottom: 2rem;
 }
