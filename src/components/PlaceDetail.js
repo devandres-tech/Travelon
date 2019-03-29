@@ -2,8 +2,10 @@ import React from 'react'
 
 export default function PlaceDetail(props) {
   return (
-    <div>
-      <h4>Name: {props.name}</h4>
+    <div className="place-container__div">
+      <h4>{props.name}</h4>
+      <p className="address">Address: {props.address}</p>
+      <p>Type: {props.category}</p>
     </div>
   )
 }

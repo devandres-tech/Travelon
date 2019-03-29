@@ -28,6 +28,10 @@ class MainView extends Component {
     this.setState({ toggleView: !this.state.toggleView });
   }
 
+  reload = () => {
+    window.location.reload();
+  }
+
   renderSwitch(param) {
     switch (param) {
       case 'weather':
@@ -59,6 +63,7 @@ class MainView extends Component {
             <li onClick={() => this.toggleView('places')}><i className="fas fa-map-marked-alt"></i>Discover Places</li>
             <li onClick={() => this.toggleView('airports')}><i className="fas fa-plane-departure"></i>Find Airports</li>
             <li onClick={() => this.toggleView('images')}><i className="fas fa-camera"></i>Images</li>
+            <li onClick={() => this.reload()}><i className="fas fa-home"></i>Search Country</li>
           </ul>
         </div>
         {

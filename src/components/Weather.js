@@ -6,7 +6,6 @@ import moment from 'moment';
 
 
 class Weather extends Component {
-
   state = {
     forecastData: [],
     day: []
@@ -38,7 +37,6 @@ class Weather extends Component {
 
     return (
       <div className="main-weather">
-        {/* <h1>hi</h1> */}
         {this.state.day}
       </div>
     )

@@ -27,7 +27,11 @@ class Places extends Component {
 
         const placeEl = this.state.places.map(function (place) {
           console.log('ejsd', place);
-          return <PlaceDetail key={place.venue.name} name={place.venue.name} />
+          return <PlaceDetail
+            category={place.venue.categories[0].name}
+            address={place.venue.location.address}
+            key={place.venue.name}
+            name={place.venue.name} />
         })
 
         this.setState({ placeView: placeEl })
@@ -36,7 +40,7 @@ class Places extends Component {
 
   render() {
     return (
-      <div>
+      <div className="place-container">
         {this.state.placeView}
       </div>
     )

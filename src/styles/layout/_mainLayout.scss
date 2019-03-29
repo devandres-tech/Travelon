@@ -20,10 +20,8 @@
   // globe image
   background-image: url("https://i.imgur.com/hPBnVEQ.jpg")
 
-  //bus image
-  // background-image: url("https://i.imgur.com/qaTgrqF.jpg");
 
-  // grid-column: 2/3;
+    // grid-column: 2/3;
 }
 
 .weather-container {
@@ -31,7 +29,15 @@
 }
 
 .images-container {
-  background-color: rgb(247, 193, 176);
+  font-family: 'Gothic A1',
+    sans-serif;
+  display: flex !important;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  background-color: rgb(202, 182, 240);
+  padding-left: 2rem;
+  padding-top: 1.5rem;
+  overflow-y: scroll;
 }
 
 .main-weather {
@@ -123,9 +129,11 @@
 .img-container {
   width: 400px;
   height: 250px;
+  border-radius: 5px;
 }
 
 .img-div {
+  padding-right: 2rem;
   padding-bottom: 2rem;
 }
 
@@ -133,4 +141,37 @@
   font-family: 'Gothic A1', sans-serif;
   background-color: rgb(247, 193, 176);
 
+}
+
+.place-container {
+  background-color: rgb(176, 240, 176);
+  font-family: 'Gothic A1',
+    sans-serif;
+  text-align: center;
+  padding-top: 2rem;
+
+  &__div {
+    padding-bottom: 2rem;
+  }
+}
+
+.address {
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.airport-container {
+  font-family: 'Gothic A1',
+    sans-serif;
+  background-color: rgb(238, 203, 139);
+  text-align: center;
+  padding-top: 2rem;
+}
+
+.airport-detail {
+  padding-bottom: 2rem;
+}
+
+.fa-home {
+  // padding-top: 2.5rem;
 }
