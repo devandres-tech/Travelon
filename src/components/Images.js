@@ -18,13 +18,11 @@ class Images extends Component {
     axios.get(url)
       .then(res => {
         console.log('res', res.data);
-        for (let i = 0; i < res.data.hits.length; i += 4) {
+        for (let i = 1; i < res.data.hits.length; i += 4) {
           this.state.images.push(res.data.hits[i]);
         }
 
-        console.log('im', this.state.images);
         const imgElement = this.state.images.map(function (img) {
-          console.log('img', img.userImageURL);
           return <ImageDetail tags={img.tags} img={img.webformatURL} />
         })
 

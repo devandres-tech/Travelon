@@ -1,7 +1,16 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux';
+import PlaceDetail from './PlaceDetail';
+
+
+
 class Places extends Component {
+  state = {
+    places: [],
+    placeView: ''
+  }
+
 
   componentWillMount() {
     const URL = 'https://api.foursquare.com/v2/venues/explore?'
@@ -11,14 +20,24 @@ class Places extends Component {
     const url = `${URL}client_id=${client_id}&client_secret=${client_secret}&v=20180323&near=${city}`;
     axios.get(url)
       .then(res => {
-        console.log('res', res.data);
-      })
+        console.log('res???', res.data.response.groups[0].items);
+        for (let i = 0; i < res.data.response.groups[0].items.length; i += 5) {
+          this.state.places.push(res.data.response.groups[0].items[i]);
+        }
+
+        const placeEl = this.state.places.map(function (place) {
+          console.log('ejsd', place);
+          return <PlaceDetail key={place.venue.name} name={place.venue.name} />
+        })
+
+        this.setState({ placeView: placeEl })
+      });
   }
 
   render() {
     return (
       <div>
-        <h1>Get places</h1>
+        {this.state.placeView}
       </div>
     )
   }

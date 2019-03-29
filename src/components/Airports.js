@@ -1,8 +1,13 @@
 import React, { Component } from 'react'
 import axios from 'axios';
 import { connect } from 'react-redux';
+import AirPortDetail from './AirPortDetail';
 
 class Airports extends Component {
+  state = {
+    airport: [],
+    airportView: ''
+  }
   componentWillMount() {
     const URL = 'https://cometari-airportsfinder-v1.p.rapidapi.com/api/airports/by-text?'
     const city = this.props.country[0].capital;
@@ -14,13 +19,18 @@ class Airports extends Component {
     })
       .then(res => {
         console.log('res', res.data);
-      })
+        const airportEl = res.data.map(function (place) {
+          return <AirPortDetail name={place.name} />
+        });
+
+        this.setState({ airportView: airportEl });
+      });
   }
 
   render() {
     return (
       <div>
-        <h1>hello airports</h1>
+        {this.state.airportView}
       </div>
     )
   }
