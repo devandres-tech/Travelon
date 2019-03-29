@@ -8,10 +8,19 @@ import Places from './Places';
 
 
 class MainView extends Component {
+  getCountryName = () => {
+  if (this.props.country[0]) {
+    const name = this.props.country[0].name;
+    return name;
+    }
+  }
 
   state = {
     toggleView: false,
     view: ''
+
+
+
   }
 
   toggleView = (currentView) => {
@@ -31,12 +40,17 @@ class MainView extends Component {
         return <Images />
       default: {
         return <h1 className="main-view"><br/>Travelon<br/> Life Is An Adventure </h1>
+            {/*  <h3> Welcome to <br/> {name} </h3> */}
+
 
       }
     }
   }
 
   render() {
+    // const name = this.getCountryName();
+
+
     return (
       <>
         <div className="side-panel">

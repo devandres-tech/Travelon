@@ -80,15 +80,15 @@ class SideDetails extends Component {
     const callingCode = this.getCallingCode();
 
     return (
-      <div className="side-panel">
-        <ul className="side-panel__list">
+      <div className="right-panel">
+        <ul className="right-panel__list">
         <h5>
         <span className='font'>
-          <li  className='flag'> <img src={flag} height='60' width='90'/> </li>
-          <li  className="time">{name}'s Current Time: <br/> <strong>{time}</strong> </li>
-          <li  className='time'>{name}'s Capital: <br/> <strong>{capital}</strong> </li>
-          <li  className='time'>{name}'s Official Language:<br/> <strong>{language}</strong> </li>
-          <li  className='time'>{name}'s Currency: <br/> <strong>{currency}</strong> </li>
+          <li  className='flag'> <img src={flag} height='80' width='120'/> </li><br/>
+          <li  className="time">{name}'s Current Time: <br/> <strong>{time}</strong> </li><br/>
+          <li  className='time'>{name}'s Capital: <br/> <strong>{capital}</strong> </li><br/>
+          <li  className='time'>{name}'s Official Language:<br/> <strong>{language}</strong> </li><br/>
+          <li  className='time'>{name}'s Currency: <br/> <strong>{currency}</strong> </li><br/>
           <li  className='time'>{name}'s Dialing Code: <br/> <strong>+{callingCode}</strong></li>
           </span>
           </h5>
