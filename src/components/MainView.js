@@ -29,8 +29,10 @@ class MainView extends Component {
         return <Airports />;
       case 'images':
         return <Images />
-      default:
-        return <h1 className="main-view"></h1>
+      default: {
+        return <h1 className="main-view"><br/>Travelon<br/> Life Is An Adventure </h1>
+
+      }
     }
   }
 
