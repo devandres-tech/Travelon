@@ -8,6 +8,7 @@ class Airports extends Component {
     airport: [],
     airportView: ''
   }
+
   componentWillMount() {
     const URL = 'https://cometari-airportsfinder-v1.p.rapidapi.com/api/airports/by-text?'
     const city = this.props.country[0].capital;
@@ -20,7 +21,7 @@ class Airports extends Component {
       .then(res => {
         console.log('res', res.data);
         const airportEl = res.data.map(function (place) {
-          return <AirPortDetail name={place.name} />
+          return <AirPortDetail name={place.name} city={place.city} />
         });
 
         this.setState({ airportView: airportEl });
@@ -29,7 +30,7 @@ class Airports extends Component {
 
   render() {
     return (
-      <div>
+      <div className="airport-container">
         {this.state.airportView}
       </div>
     )
