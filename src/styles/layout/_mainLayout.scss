@@ -5,7 +5,18 @@
 }
 
 .main-view {
-  background-color: red;
+  display: grid;
+  grid-template-columns: 100vh;
+  grid-template-rows: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom center;
+  // globe image
+  background-image: url("https://images.pexels.com/photos/346885/pexels-photo-346885.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")
+
+  //bus image
+  // background-image: url("https://i.imgur.com/qaTgrqF.jpg");
+
   // grid-column: 2/3;
 }
 
